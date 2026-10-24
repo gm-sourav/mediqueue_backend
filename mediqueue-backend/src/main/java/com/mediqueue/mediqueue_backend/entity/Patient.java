@@ -27,5 +27,4 @@ public class Patient {
     private String gender;
     private String bloodGroup;
 
-
 }
