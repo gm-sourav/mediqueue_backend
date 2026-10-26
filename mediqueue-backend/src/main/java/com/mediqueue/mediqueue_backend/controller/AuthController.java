@@ -1,5 +1,7 @@
 package com.mediqueue.mediqueue_backend.controller;
 
+import com.mediqueue.mediqueue_backend.dto.AuthResponse;
+import com.mediqueue.mediqueue_backend.dto.LoginRequest;
 import com.mediqueue.mediqueue_backend.dto.RegisterRequest;
 import com.mediqueue.mediqueue_backend.dto.UserResponse;
 import com.mediqueue.mediqueue_backend.service.AuthService;
@@ -19,5 +21,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest req) {
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.registerPatient(req));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest req) {
+        return ResponseEntity.ok(authService.login(req));
     }
 }
