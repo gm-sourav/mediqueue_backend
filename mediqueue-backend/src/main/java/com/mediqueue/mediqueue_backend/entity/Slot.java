@@ -1,12 +1,7 @@
 package com.mediqueue.mediqueue_backend.entity;
 
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -17,9 +12,10 @@ import java.time.LocalTime;
                 columnNames = {"doctor_id", "slot_date", "start_time"}
         )
 )
-@Setter @Getter
+@Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 public class Slot {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,7 +28,7 @@ public class Slot {
     private LocalDate slotDate;
 
     @Column(nullable = false)
-    private LocalDate startTime;
+    private LocalTime startTime;
 
     @Column(nullable = false)
     private LocalTime endTime;
