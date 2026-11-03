@@ -57,6 +57,7 @@ public class SlotService {
             start = end;
         }
 
+
         if (created.isEmpty()) {
             throw new IllegalStateException("No new slots created (they may already exist)");
         }
