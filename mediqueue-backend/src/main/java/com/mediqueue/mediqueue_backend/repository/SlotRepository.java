@@ -12,6 +12,8 @@ import java.util.List;
 
 public interface SlotRepository extends JpaRepository<Slot, Long> {
 
+    void deleteByDoctorId(Long doctorId);
+
     boolean existsByDoctorIdAndSlotDateAndStartTime(Long doctorId, LocalDate date, LocalTime startTime);
 
     List<Slot> findByDoctorIdAndSlotDateOrderByStartTime(Long doctorId, LocalDate date);

@@ -7,5 +7,7 @@ import java.util.Optional;
 
 
 public interface QueueStateRepository extends JpaRepository<QueueState, Long> {
+    void deleteByDoctorId(Long doctorId);
+
     Optional<QueueState> findByDoctorIdAndQueueDate(Long doctorId, LocalDate date);
 }

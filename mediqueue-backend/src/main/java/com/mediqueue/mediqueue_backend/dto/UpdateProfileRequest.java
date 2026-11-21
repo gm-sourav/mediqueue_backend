@@ -16,4 +16,8 @@ public class UpdateProfileRequest {
     // Empty is allowed (phone is optional)
     @Pattern(regexp = "^$|^[0-9+\\-() ]{6,20}$", message = "Invalid phone number")
     private String phone;
+
+    // Optional: MALE, FEMALE or empty
+    @Pattern(regexp = "^(MALE|FEMALE)?$", message = "Gender must be MALE or FEMALE")
+    private String gender;
 }

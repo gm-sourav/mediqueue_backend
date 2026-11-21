@@ -28,6 +28,13 @@ public class User {
 
     private String phone;
 
+    /** "MALE" or "FEMALE". Optional. Used to choose the default avatar. */
+    @Column(length = 10)
+    private String gender;
+
+    /** Relative URL like /uploads/abc.jpg */
+    private String photoUrl;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;

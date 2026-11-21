@@ -17,4 +17,5 @@ public class DoctorResponse {
     private Integer experienceYears;
     private BigDecimal fee;
     private String photoUrl;
+    private String gender;
 }
